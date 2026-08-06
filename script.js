@@ -23,6 +23,8 @@ document.querySelectorAll('.reveal').forEach((element) => observer.observe(eleme
 
 const backButton = document.querySelector('[data-back-button]');
 
+backButton?.querySelector('span')?.replaceChildren('Back');
+
 backButton?.addEventListener('click', () => {
   if (window.history.length > 1 && document.referrer) {
     window.history.back();
