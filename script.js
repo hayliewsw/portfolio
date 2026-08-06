@@ -84,12 +84,10 @@ if (educationSection) {
   `;
 }
 
-const selectedProjectSection = [...document.querySelectorAll('.skills-block')].find((section) => (
-  section.querySelector('.eyebrow')?.textContent.trim() === 'Selected project'
-));
+const profileSection = document.querySelector('.resume-summary');
 
-if (selectedProjectSection) {
-  selectedProjectSection.insertAdjacentHTML('beforebegin', `
+if (profileSection) {
+  profileSection.insertAdjacentHTML('afterend', `
     <section class="resume-block skills-block core-skills">
       <span class="eyebrow">Core skills</span>
       <div>
