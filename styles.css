@@ -96,7 +96,9 @@ body:has(.bottom-nav) .site-header .page-progress{bottom:0;height:3px}
 .about-section .text-link{white-space:nowrap}
 .section-heading p,.project-meta,.resume-contact>span:last-child{font:700 10px/1.5 Manrope;text-transform:uppercase;letter-spacing:.045em !important}
 .case-page .back-button{top:auto;bottom:22px;left:22px}
-@media(max-width:760px){.case-page .back-button{top:auto;bottom:14px;left:14px}}
+.case-next-button{position:fixed;right:22px;bottom:22px;z-index:30;display:inline-flex;align-items:center;padding:11px 15px;border:1px solid #ff72db;border-radius:999px;background:#151222;color:#f4f1ff;font:500 11px Manrope;text-decoration:none;text-transform:uppercase;box-shadow:0 4px 20px #00000077;transition:background .2s,color .2s,border-color .2s}
+.case-next-button:hover{background:var(--red);border-color:var(--red);color:#160b16}
+@media(max-width:760px){.case-page .back-button{top:auto;bottom:14px;left:14px}.case-next-button{right:14px;bottom:14px;padding:10px 12px;font-size:10px}}
 
 /* Keep every case-study surface dark */
 .case-page .case-summary,.case-page .case-section,.case-page .decisions,.case-page .case-showcase,.case-page .case-outcome{background:#0b0a12}

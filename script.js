@@ -23,16 +23,31 @@ document.querySelectorAll('.reveal').forEach((element) => observer.observe(eleme
 
 const backButton = document.querySelector('[data-back-button]');
 
-backButton?.querySelector('span')?.replaceChildren('Back');
+backButton?.querySelector('span')?.replaceChildren('Back to home');
 
 backButton?.addEventListener('click', () => {
-  if (window.history.length > 1 && document.referrer) {
-    window.history.back();
-    return;
-  }
-
-  window.location.href = 'index.html#work';
+  window.location.href = 'index.html#top';
 });
+
+const nextCaseStudyByPage = {
+  'case-study-1.html': 'case-study-2.html',
+  'case-study-2.html': 'case-study-3.html',
+};
+
+if (document.body.classList.contains('case-page')) {
+  const currentCaseStudy = window.location.pathname.split('/').pop();
+  const nextCaseStudy = nextCaseStudyByPage[currentCaseStudy];
+
+  document.querySelector('.case-outcome a')?.remove();
+
+  if (nextCaseStudy) {
+    const nextCaseButton = document.createElement('a');
+    nextCaseButton.className = 'case-next-button';
+    nextCaseButton.href = nextCaseStudy;
+    nextCaseButton.textContent = 'Next case study →';
+    document.body.append(nextCaseButton);
+  }
+}
 
 const renamedCaseStudies = {
   'aurora-travel.html': 'case-study-1.html',
@@ -86,6 +101,7 @@ if (educationSection) {
 const profileSection = document.querySelector('.resume-summary');
 
 document.querySelector('.resume-hero .eyebrow')?.remove();
+document.querySelector('.experience-block .eyebrow')?.replaceChildren('Professional Experience');
 
 if (profileSection) {
   profileSection.insertAdjacentHTML('afterend', `
@@ -126,14 +142,14 @@ if (selectedProjectsSection) {
 }
 
 document.querySelectorAll('.entry-date').forEach((date) => {
-  date.innerHTML = date.textContent.trim().replace(/\s*—\s*/, '<br />— ');
+  date.innerHTML = date.textContent.trim().replace(/\s*—\s*/, ' —<br />');
 });
 
 if (document.body.classList.contains('resume-page')) {
   document.body.insertAdjacentHTML('beforeend', `
     <nav class="bottom-nav resume-bottom-nav" aria-label="Page navigation">
       <a class="bottom-nav-wordmark" href="index.html#top" aria-label="Haylie Wong home">HAYLIE <span>WONG</span></a>
-      <a href="index.html#top">About me</a>
+      <a href="index.html#top">Home</a>
       <a href="index.html#work">Projects</a>
       <a href="index.html#about">About</a>
       <a href="index.html#contact">Contact</a>
