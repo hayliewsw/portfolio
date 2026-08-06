@@ -87,6 +87,15 @@ if (profileSection) {
   `);
 }
 
+const selectedProjectsSection = [...document.querySelectorAll('.skills-block')].find((section) => (
+  section.querySelector('.eyebrow')?.textContent.trim() === 'Selected project'
+));
+
+if (selectedProjectsSection) {
+  selectedProjectsSection.classList.add('selected-projects');
+  selectedProjectsSection.querySelector('.eyebrow').textContent = 'Selected Projects';
+}
+
 if (document.body.classList.contains('resume-page')) {
   document.body.insertAdjacentHTML('beforeend', `
     <nav class="bottom-nav resume-bottom-nav" aria-label="Page navigation">
