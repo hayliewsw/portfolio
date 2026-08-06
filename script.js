@@ -123,6 +123,10 @@ if (selectedProjectsSection) {
   `;
 }
 
+document.querySelectorAll('.entry-date').forEach((date) => {
+  date.innerHTML = date.textContent.trim().replace(/\s*—\s*/, '<br />— ');
+});
+
 if (document.body.classList.contains('resume-page')) {
   document.body.insertAdjacentHTML('beforeend', `
     <nav class="bottom-nav resume-bottom-nav" aria-label="Page navigation">
