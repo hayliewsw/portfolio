@@ -32,20 +32,6 @@ backButton?.addEventListener('click', () => {
   window.location.href = 'index.html#work';
 });
 
-const progressBar = document.querySelector('.page-progress span');
-
-const updatePageProgress = () => {
-  if (!progressBar) return;
-
-  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
-  progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
-};
-
-window.addEventListener('scroll', updatePageProgress, { passive: true });
-window.addEventListener('resize', updatePageProgress);
-updatePageProgress();
-
 const ambientSections = document.querySelectorAll('.ambient-background');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -97,4 +83,29 @@ if (profileSection) {
       </div>
     </section>
   `);
+}
+
+const sectionNavigation = document.querySelector('.bottom-nav');
+
+if (sectionNavigation) {
+  const navigationLinks = [...sectionNavigation.querySelectorAll('[data-nav-section]')];
+  const sections = navigationLinks.map((link) => document.getElementById(link.dataset.navSection));
+  const setActiveNavigation = (sectionId) => {
+    navigationLinks.forEach((link) => {
+      const isActive = link.dataset.navSection === sectionId;
+      link.classList.toggle('active', isActive);
+      link.toggleAttribute('aria-current', isActive);
+    });
+  };
+
+  const navigationObserver = new IntersectionObserver((entries) => {
+    const visibleSection = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+
+    if (visibleSection) setActiveNavigation(visibleSection.target.id);
+  }, { threshold: [0.25, 0.5, 0.75] });
+
+  sections.filter(Boolean).forEach((section) => navigationObserver.observe(section));
+  setActiveNavigation('top');
 }
