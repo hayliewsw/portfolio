@@ -104,7 +104,23 @@ const selectedProjectsSection = [...document.querySelectorAll('.skills-block')].
 
 if (selectedProjectsSection) {
   selectedProjectsSection.classList.add('selected-projects');
-  selectedProjectsSection.querySelector('.eyebrow').textContent = 'Selected Projects';
+  selectedProjectsSection.innerHTML = `
+    <span class="eyebrow">Selected Projects</span>
+    <div class="resume-project-list">
+      <article>
+        <span class="resume-project-number">01</span>
+        <div><h2>Inventory Management System</h2><p>Independent project · Product design · Operations</p><span>Turning a CSV database into a clearer, more useful operational workflow.</span></div>
+      </article>
+      <article>
+        <span class="resume-project-number">02</span>
+        <div><h2>Product Design at Abiilion</h2><p>Digital product design · UX/UI</p><span>Contributing to digital product work through cross-team collaboration.</span></div>
+      </article>
+      <article>
+        <span class="resume-project-number">03</span>
+        <div><h2>Oupelaye Studio</h2><p>Game UX · Art direction</p><span>Co-founding a game studio and shaping its art direction and player experience.</span></div>
+      </article>
+    </div>
+  `;
 }
 
 if (document.body.classList.contains('resume-page')) {

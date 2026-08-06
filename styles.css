@@ -118,8 +118,44 @@ body:has(.bottom-nav) .site-header .page-progress{bottom:0;height:3px}
 body *,body [class],body [class] *{letter-spacing:0 !important}
 .experience-block .resume-entries article:nth-child(4) h2 span{text-transform:lowercase}
 .selected-projects>div{display:block}
+.selected-projects{display:block}
+.selected-projects>.eyebrow{display:block;margin-bottom:28px}
 .selected-projects p{margin:0 0 24px}
 .selected-projects p:last-child{margin-bottom:0}
+.selected-projects .resume-project-list{display:grid;grid-template-columns:1fr;gap:0}
+.resume-project-list article{display:block;padding:22px 0}
+.resume-project-number{display:inline-block;margin-right:12px;font-size:24px;font-weight:800;line-height:1;color:var(--red);vertical-align:baseline}
+.resume-project-list article>div{display:inline}
+.resume-project-list h2{display:inline;margin:0;font-size:19px;line-height:1.15}
+.resume-project-list p{margin:10px 0 8px 46px;font-size:10px;line-height:1.45;text-transform:uppercase;color:#d8d1e2}
+.resume-project-list article>div>span{display:block;margin-left:46px;font-size:13px;line-height:1.55;color:#eee9f5}
+@media(max-width:760px){
+  .resume-project-number{font-size:21px;margin-right:9px}
+  .resume-project-list h2{font-size:18px}
+  .resume-project-list p,.resume-project-list article>div>span{margin-left:38px}
+}
+
+/* Selected projects: clean numbered editorial layout */
+.selected-projects{display:grid;grid-template-columns:21% 1fr;gap:4vw}
+.selected-projects>.eyebrow{margin-bottom:0}
+.selected-projects .resume-project-list{gap:18px}
+.resume-project-list article{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;padding:4px 0 10px}
+.resume-project-number{display:block;margin:1px 0 0;font-size:28px;line-height:1;color:var(--red)}
+.resume-project-list article>div{display:block}
+.resume-project-list h2{display:block;margin:0;font-size:19px;line-height:1.15;color:#f4f1ff}
+.resume-project-list p{margin:7px 0;font-size:10px;line-height:1.45;color:#cfc5df}
+.resume-project-list article>div>span{margin:0;font-size:13px;line-height:1.55;color:#eee9f5}
+.resume-entries .entry-date{padding-top:1px;font-size:clamp(18px,2vw,28px);font-weight:800;line-height:1;color:var(--red)}
+@media(max-width:760px){
+  .selected-projects{display:block}
+  .selected-projects>.eyebrow{margin-bottom:28px}
+  .selected-projects .resume-project-list{gap:16px}
+  .resume-project-list article{grid-template-columns:40px minmax(0,1fr);gap:12px}
+  .resume-project-number{font-size:24px}
+  .resume-project-list h2{font-size:18px}
+  .resume-project-list p,.resume-project-list article>div>span{margin-left:0}
+  .resume-entries .entry-date{font-size:21px}
+}
 
 /* Balanced resume type scale */
 .resume-hero h1,.resume-hero h1 em{font-size:clamp(58px,7vw,82px);line-height:.9;color:var(--red)}
