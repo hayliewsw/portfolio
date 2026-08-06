@@ -32,6 +32,17 @@ backButton?.addEventListener('click', () => {
   window.location.href = 'index.html#work';
 });
 
+const renamedCaseStudies = {
+  'aurora-travel.html': 'case-study-1.html',
+  'signal-studio.html': 'case-study-2.html',
+  'luma.html': 'case-study-3.html',
+};
+
+document.querySelectorAll('a[href]').forEach((link) => {
+  const updatedHref = renamedCaseStudies[link.getAttribute('href')];
+  if (updatedHref) link.setAttribute('href', updatedHref);
+});
+
 const ambientSections = document.querySelectorAll('.ambient-background');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -101,7 +112,7 @@ if (document.body.classList.contains('resume-page')) {
     <nav class="bottom-nav resume-bottom-nav" aria-label="Page navigation">
       <a class="bottom-nav-wordmark" href="index.html#top" aria-label="Haylie Wong home">HAYLIE <span>WONG</span></a>
       <a href="index.html#top">About me</a>
-      <a href="index.html#work">Work</a>
+      <a href="index.html#work">Projects</a>
       <a href="index.html#about">About</a>
       <a href="index.html#contact">Contact</a>
       <a class="bottom-nav-resume active" href="resume.html" aria-current="page">Resume ↗</a>
