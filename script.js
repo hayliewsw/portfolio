@@ -62,3 +62,41 @@ if (!reduceMotion && ambientSections.length) {
   driftFractalNoise();
   window.setInterval(driftFractalNoise, 12000);
 }
+
+const educationSection = [...document.querySelectorAll('.skills-block')].find((section) => (
+  section.querySelector('.eyebrow')?.textContent.trim() === 'Education'
+));
+
+if (educationSection) {
+  educationSection.classList.add('education-block');
+  educationSection.innerHTML = `
+    <span class="eyebrow">Education</span>
+    <div class="resume-entries">
+      <article>
+        <div class="entry-date">2022 — 2023</div>
+        <div><h2>Design Management (Post-graduate Certificate) <span>George Brown College · Toronto, Canada</span></h2><p>Dean’s List: Fall 2022 and Winter 2023.</p></div>
+      </article>
+      <article>
+        <div class="entry-date">2016 — 2017</div>
+        <div><h2>Bachelor of Communication (Professional Communications) <span>RMIT University · Singapore & Australia</span></h2></div>
+      </article>
+    </div>
+  `;
+}
+
+const selectedProjectSection = [...document.querySelectorAll('.skills-block')].find((section) => (
+  section.querySelector('.eyebrow')?.textContent.trim() === 'Selected project'
+));
+
+if (selectedProjectSection) {
+  selectedProjectSection.insertAdjacentHTML('beforebegin', `
+    <section class="resume-block skills-block core-skills">
+      <span class="eyebrow">Core skills</span>
+      <div>
+        <p>Product design<br />UX/UI design<br />Information architecture</p>
+        <p>Workflow design<br />UX research<br />Visual design</p>
+        <p>Cross-team collaboration<br />Art direction<br />Game UX</p>
+      </div>
+    </section>
+  `);
+}
