@@ -72,6 +72,8 @@ if (educationSection) {
 
 const profileSection = document.querySelector('.resume-summary');
 
+document.querySelector('.resume-hero .eyebrow')?.remove();
+
 if (profileSection) {
   profileSection.insertAdjacentHTML('afterend', `
     <section class="resume-block skills-block core-skills">
@@ -82,6 +84,19 @@ if (profileSection) {
         <p>Cross-team collaboration<br />Art direction<br />Game UX</p>
       </div>
     </section>
+  `);
+}
+
+if (document.body.classList.contains('resume-page')) {
+  document.body.insertAdjacentHTML('beforeend', `
+    <nav class="bottom-nav resume-bottom-nav" aria-label="Page navigation">
+      <a class="bottom-nav-wordmark" href="index.html#top" aria-label="Haylie Wong home">HAYLIE <span>WONG</span></a>
+      <a href="index.html#top">About me</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="bottom-nav-resume active" href="resume.html" aria-current="page">Resume ↗</a>
+    </nav>
   `);
 }
 

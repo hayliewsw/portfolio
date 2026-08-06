@@ -94,6 +94,22 @@ body:has(.bottom-nav) .site-header .page-progress{bottom:0;height:3px}
 .contact-top p,.footer>span{font:700 10px Manrope;text-transform:uppercase;letter-spacing:.045em !important}
 .hero-copy p,.project-title p,.project-title a,.about-stamp,.principles li,.about-section .text-link{font:700 10px/1.5 Manrope;text-transform:uppercase;letter-spacing:.045em !important}
 .about-section .text-link{white-space:nowrap}
+.section-heading p,.project-meta,.resume-contact>span:last-child{font:700 10px/1.5 Manrope;text-transform:uppercase;letter-spacing:.045em !important}
+.case-page .back-button{top:auto;bottom:22px;left:22px}
+@media(max-width:760px){.case-page .back-button{top:auto;bottom:14px;left:14px}}
+
+/* Keep every case-study surface dark */
+.case-page .case-summary,.case-page .case-section,.case-page .decisions,.case-page .case-showcase,.case-page .case-outcome{background:#0b0a12}
+.case-page .decisions,.case-page .case-outcome{background:#15121f}
+.case-page .travel-screens>div,.case-page .luma-frames>div,.case-page .signal-boards>div{background:#211a35;color:#f4f1ff}
+.case-page .travel-screens>div:nth-child(2),.case-page .luma-frames>div:nth-child(2){background:#2c1d3d}
+.case-page .travel-screens>div:nth-child(3),.case-page .luma-frames>div:nth-child(3){background:#161224}
+.case-page .case-showcase .showcase-copy{color:#f4f1ff}
+.case-page .case-showcase .showcase-copy>span{color:#ff9ce8}
+.case-page .case-showcase .showcase-copy h2{color:#f4f1ff}
+.case-page .case-showcase .showcase-copy p{color:#d8d1e2}
+.signal-case .signal-showcase{background:#0b0a12}
+.signal-case .signal-showcase .showcase-copy>span,.signal-case .signal-showcase .showcase-copy h2 em{color:#ff9ce8}
 @media(max-width:760px){
   .bottom-nav{gap:0;padding:4px;right:10px;bottom:10px;left:10px}
   .bottom-nav a{min-width:0;padding:10px 7px;font-size:8px}
