@@ -110,6 +110,13 @@ body:has(.bottom-nav) .site-header .page-progress{bottom:0;height:3px}
 .case-page .case-showcase .showcase-copy p{color:#d8d1e2}
 .signal-case .signal-showcase{background:#0b0a12}
 .signal-case .signal-showcase .showcase-copy>span,.signal-case .signal-showcase .showcase-copy h2 em{color:#ff9ce8}
+
+/* Natural tracking for names, body copy, and skills */
+.bottom-nav .bottom-nav-wordmark,.core-skills p,.project-meta,.about-copy p{letter-spacing:0 !important}
+
+/* One consistent character spacing system */
+body *,body [class],body [class] *{letter-spacing:0 !important}
+.experience-block .resume-entries article:nth-child(4) h2 span{text-transform:lowercase}
 @media(max-width:760px){
   .bottom-nav{gap:0;padding:4px;right:10px;bottom:10px;left:10px}
   .bottom-nav a{min-width:0;padding:10px 7px;font-size:8px}
