@@ -92,8 +92,8 @@ projects = [
     ("01", "Inventory Management System", "INDEPENDENT | PRODUCT DESIGN | OPERATIONS", "Independently designed and built a searchable inventory website in five days, turning CSV and Notion data into categories, filters, and location-aware views."),
     ("02", "abillion Profile Revamp", "UX/UI | RESEARCH", "Sole UX designer for a launched profile revamp, defining systems, flows, prototypes, and specifications; validated in UXArmy with four participants across eight tasks."),
     ("03", "Mad John", "GAME UX | ART DIRECTION", "Co-created an in-progress card-and-puzzle game; led game UX and art direction, using six mixed-experience playtests to introduce a hands-on tutorial and refine scoring."),
-    ("04", "Sompo Asia Website Revamp", "RESPONSIVE UI | INFORMATION ARCHITECTURE", "Designed a full regional website across desktop and mobile, translating a refreshed brand and clearer information architecture into flows, states, and specifications."),
-    ("05", "Toadally In Love", "GAME JAM | ART DIRECTION | UX", "Led art direction and UX for a four-day puzzle-game build, creating a readable interaction system and visual world that ranked third overall among 73 entries."),
+    ("04", "Sompo Asia Website Revamp", "RESPONSIVE UI | INFORMATION ARCHITECTURE", "Designed a full regional website across desktop and mobile, translating a refreshed brand and clearer information architecture into flows, states, and specifications. <link href=\"https://www.sompo-apac.com/\">View the live website</link>."),
+    ("05", "Toadally In Love", "GAME JAM | ART DIRECTION | UX", "Led art direction and UX for a four-day puzzle-game build, creating a readable interaction system and visual world that ranked third overall among 73 entries. <link href=\"https://szzzeler.itch.io/toadally-in-love\">Play on itch.io</link>."),
 ]
 
 project_rows = []

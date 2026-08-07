@@ -141,14 +141,29 @@ if (selectedProjectsSection) {
       </article>
       <article>
         <span class="resume-project-number">04</span>
-        <div><h2>Sompo Asia Website Revamp</h2><p>Responsive UI | Information architecture</p><span>Designed a full regional website across desktop and mobile, translating a refreshed brand and clearer information architecture into flows, prototypes, states, and production specifications.</span></div>
+        <div><h2>Sompo Asia Website Revamp</h2><p>Responsive UI | Information architecture</p><span>Designed a full regional website across desktop and mobile, translating a refreshed brand and clearer information architecture into flows, prototypes, states, and production specifications.</span><a class="resume-project-link" href="https://www.sompo-apac.com/" target="_blank" rel="noopener noreferrer">View live website ↗</a></div>
       </article>
       <article>
         <span class="resume-project-number">05</span>
-        <div><h2>Toadally In Love</h2><p>Game jam | Art direction | UX</p><span>Led art direction and UX for a four-day puzzle-game build, creating a readable interaction system and visual world that ranked third overall among 73 entries.</span></div>
+        <div><h2>Toadally In Love</h2><p>Game jam | Art direction | UX</p><span>Led art direction and UX for a four-day puzzle-game build, creating a readable interaction system and visual world that ranked third overall among 73 entries.</span><a class="resume-project-link" href="https://szzzeler.itch.io/toadally-in-love" target="_blank" rel="noopener noreferrer">Play on itch.io ↗</a></div>
       </article>
     </div>
   `;
+}
+
+if (document.body.classList.contains('case-page') || document.body.classList.contains('resume-page')) {
+  document.querySelector('main')?.insertAdjacentHTML('beforeend', `
+    <footer class="footer portfolio-footer">
+      <span>© 2026 Haylie Wong</span>
+      <div>
+        <a href="mailto:hayliewsw@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/hayliewsw/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://szzzeler.itch.io" target="_blank" rel="noopener noreferrer">itch.io</a>
+        <a href="resume.html">Resume</a>
+      </div>
+      <span>Made with care in Toronto</span>
+    </footer>
+  `);
 }
 
 document.querySelectorAll('.entry-date').forEach((date) => {
