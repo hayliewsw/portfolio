@@ -2,6 +2,7 @@ from pathlib import Path
 
 from reportlab.lib.colors import HexColor
 from reportlab.lib.pagesizes import letter
+from reportlab.lib.enums import TA_JUSTIFY
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import KeepTogether, Paragraph, SimpleDocTemplate, Table, TableStyle
@@ -21,15 +22,16 @@ document = SimpleDocTemplate(
 )
 
 styles = getSampleStyleSheet()
-styles.add(ParagraphStyle(name="Name", fontName="Helvetica-Bold", fontSize=27, leading=27, textColor=ink, spaceAfter=5))
-styles.add(ParagraphStyle(name="Role", fontName="Helvetica", fontSize=8.2, leading=10.5, textColor=ink, spaceAfter=8))
-styles.add(ParagraphStyle(name="Section", fontName="Helvetica-Bold", fontSize=12, leading=14, textColor=ink, spaceBefore=7, spaceAfter=3, uppercase=True))
-styles.add(ParagraphStyle(name="Body", fontName="Helvetica", fontSize=7.9, leading=9.7, textColor=ink, spaceAfter=2))
-styles.add(ParagraphStyle(name="Job", fontName="Helvetica-Bold", fontSize=9.1, leading=10.6, textColor=ink, spaceAfter=1))
-styles.add(ParagraphStyle(name="Company", fontName="Helvetica", fontSize=7.9, leading=9.4, textColor=ink, spaceAfter=1))
-styles.add(ParagraphStyle(name="Date", fontName="Helvetica", fontSize=7.9, leading=9.4, textColor=ink))
-styles.add(ParagraphStyle(name="ProjectNumber", fontName="Helvetica", fontSize=7.9, leading=9.4, textColor=ink))
-styles.add(ParagraphStyle(name="ProjectMeta", fontName="Helvetica-Bold", fontSize=7.1, leading=8.5, textColor=ink, spaceAfter=1))
+styles.add(ParagraphStyle(name="Name", fontName="Helvetica-Bold", fontSize=27, leading=28, textColor=ink, spaceAfter=4))
+styles.add(ParagraphStyle(name="Role", fontName="Helvetica", fontSize=8.2, leading=10.4, textColor=ink, spaceAfter=7))
+styles.add(ParagraphStyle(name="Section", fontName="Helvetica-Bold", fontSize=11.4, leading=13, textColor=ink, spaceBefore=6, spaceAfter=3, uppercase=True))
+styles.add(ParagraphStyle(name="Body", fontName="Helvetica", fontSize=8.1, leading=10.1, textColor=ink, spaceAfter=2))
+styles.add(ParagraphStyle(name="Profile", parent=styles["Body"], alignment=TA_JUSTIFY, spaceAfter=2))
+styles.add(ParagraphStyle(name="Job", fontName="Helvetica-Bold", fontSize=9.3, leading=10.8, textColor=ink, spaceAfter=1))
+styles.add(ParagraphStyle(name="Company", fontName="Helvetica", fontSize=8.0, leading=9.6, textColor=ink, spaceAfter=1))
+styles.add(ParagraphStyle(name="Date", fontName="Helvetica", fontSize=8.0, leading=9.6, textColor=ink))
+styles.add(ParagraphStyle(name="ProjectNumber", fontName="Helvetica", fontSize=8.0, leading=9.6, textColor=ink))
+styles.add(ParagraphStyle(name="ProjectMeta", fontName="Helvetica-Bold", fontSize=7.2, leading=8.7, textColor=ink, spaceAfter=1))
 
 
 def two_column_entry(date, title, organization, description):
@@ -44,7 +46,7 @@ def two_column_entry(date, title, organization, description):
         ("LEFTPADDING", (0, 0), (-1, -1), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 0),
         ("TOPPADDING", (0, 0), (-1, -1), 0),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
     ]))
     return KeepTogether(table)
 
@@ -54,15 +56,15 @@ story = [
     Paragraph(
         "<b>PRODUCT DESIGNER</b><br/>"
         "TORONTO, ON<br/>"
-        "<link href=\"mailto:hayliewsw@gmail.com\">HAYLIEWSW@GMAIL.COM</link> | "
-        "<link href=\"https://www.linkedin.com/in/hayliewsw/\">LINKEDIN.COM/IN/HAYLIEWSW</link> | "
-        "<link href=\"https://hayliewsw.github.io/portfolio/\">HAYLIEWSW.GITHUB.IO/PORTFOLIO/</link>",
+        "<link href=\"mailto:hayliewsw@gmail.com\">hayliewsw@gmail.com</link> | "
+        "<link href=\"https://www.linkedin.com/in/hayliewsw/\">linkedin.com/in/hayliewsw</link> | "
+        "<link href=\"https://hayliewsw.github.io/portfolio/\">hayliewsw.github.io/portfolio/</link>",
         styles["Role"],
     ),
     Paragraph("PROFILE", styles["Section"]),
     Paragraph(
-        "Product designer with four years of UX/UI and digital product experience. I turn complex workflows, information, and interaction systems into clear, practical experiences.",
-        styles["Body"],
+        "Digital product designer with four years of UX/UI and product experience across mobile, responsive web, and game UX. I turn complex workflows, information, and interaction systems into clear, practical experiences, with particular care for the moments when people need to understand what is happening and what to do next. My end-to-end practice spans research, information architecture, user flows, prototypes, interface systems, production specifications, and usability testing. I collaborate closely with stakeholders and developers to translate operational needs into dependable customer journeys, and I bring a service-minded, detail-oriented approach to work that affects real people.",
+        styles["Profile"],
     ),
     Paragraph("CORE SKILLS", styles["Section"]),
     Paragraph(
@@ -75,11 +77,11 @@ story = [
 ]
 
 experience = [
-    ("2026 - Present", "Co-founder", "Oupelaye Studio | Quebec, Canada", "Lead art direction and game UX; collaborate with development from concepts through playtesting and iteration."),
-    ("2023 - Present", "Senior Copywriter", "The Immigration People | Singapore", "Develop clear client communication and handle confidential information with discretion."),
-    ("2023 - 2024", "Executive Assistant", "ed&c | Singapore", "Supported operational coordination and day-to-day organizational workflows."),
-    ("2020 - 2022", "Digital Product Designer", "abillion | Singapore", "Led UX for a launched profile revamp: systems, flows, prototypes, specifications, and remote testing."),
-    ("2017 - 2019", "UX/UI Designer", "Decision Science | Singapore", "Designed responsive UI, flows, prototypes, and build-ready specifications for regional digital experiences."),
+    ("2026 - Present", "Co-founder", "Oupelaye Studio | Quebec, Canada", "Co-founded a game studio; lead art direction and game UX from concepts through playtesting, partnering with development to iterate gameplay."),
+    ("2023 - Present", "Senior Copywriter", "The Immigration People | Singapore", "Write clear, audience-aware immigration content while handling sensitive client information with discretion and accuracy."),
+    ("2023 - 2024", "Executive Assistant", "ed&c | Singapore", "Coordinated priorities and operational workflows, keeping day-to-day work organized and stakeholders aligned."),
+    ("2020 - 2022", "Digital Product Designer", "abillion | Singapore", "Owned end-to-end UX for a launched profile revamp, delivering systems, flows, prototypes, specifications, and remote usability testing."),
+    ("2017 - 2019", "UX/UI Designer", "Decision Science | Singapore", "Designed responsive website experiences, translating brand and information-architecture needs into UI, prototypes, and build-ready specifications."),
 ]
 
 for entry in experience:
@@ -87,11 +89,11 @@ for entry in experience:
 
 story.append(Paragraph("SELECTED PROJECTS", styles["Section"]))
 projects = [
-    ("01", "Inventory Management System", "INDEPENDENT | PRODUCT DESIGN | OPERATIONS", "Built a Flask website that turns CSV and Notion data into a searchable inventory system."),
-    ("02", "abillion Profile Revamp", "UX/UI | RESEARCH", "Sole UX designer for a launched profile feature; tested in UXArmy with four participants across eight tasks."),
-    ("03", "Mad John", "GAME UX | ART DIRECTION", "Six mixed-experience playtesters informed a hands-on tutorial and ongoing scoring refinement."),
-    ("04", "Sompo Asia Website Revamp", "RESPONSIVE UI | INFORMATION ARCHITECTURE", "Designed desktop and mobile UI, states, flows, prototypes, and production specifications for a two-month launch."),
-    ("05", "Toadally In Love", "GAME JAM | ART DIRECTION | UX", "Led a four-day build ranked third overall among 73 entries, including second for gameplay and audio."),
+    ("01", "Inventory Management System", "INDEPENDENT | PRODUCT DESIGN | OPERATIONS", "Independently designed and built a searchable inventory website in five days, turning CSV and Notion data into categories, filters, and location-aware views."),
+    ("02", "abillion Profile Revamp", "UX/UI | RESEARCH", "Sole UX designer for a launched profile revamp, defining systems, flows, prototypes, and specifications; validated in UXArmy with four participants across eight tasks."),
+    ("03", "Mad John", "GAME UX | ART DIRECTION", "Co-created an in-progress card-and-puzzle game; led game UX and art direction, using six mixed-experience playtests to introduce a hands-on tutorial and refine scoring."),
+    ("04", "Sompo Asia Website Revamp", "RESPONSIVE UI | INFORMATION ARCHITECTURE", "Designed a full regional website across desktop and mobile, translating a refreshed brand and clearer information architecture into flows, states, and specifications."),
+    ("05", "Toadally In Love", "GAME JAM | ART DIRECTION | UX", "Led art direction and UX for a four-day puzzle-game build, creating a readable interaction system and visual world that ranked third overall among 73 entries."),
 ]
 
 project_rows = []
@@ -105,7 +107,7 @@ project_table.setStyle(TableStyle([
     ("LEFTPADDING", (0, 0), (-1, -1), 0),
     ("RIGHTPADDING", (0, 0), (-1, -1), 0),
     ("TOPPADDING", (0, 0), (-1, -1), 1),
-    ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
+    ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
 ]))
 story += [project_table, Paragraph("EDUCATION", styles["Section"])]
 

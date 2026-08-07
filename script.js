@@ -129,23 +129,23 @@ if (selectedProjectsSection) {
     <div class="resume-project-list">
       <article>
         <span class="resume-project-number">01</span>
-        <div><h2>Inventory Management System</h2><p>Independent project · Product design · Operations</p><span>Turning a CSV database into a clearer, more useful operational workflow.</span></div>
+        <div><h2>Inventory Management System</h2><p>Independent | Product design | Operations</p><span>Independently designed and built a searchable inventory website in five days, turning CSV and Notion data into categories, filters, and location-aware views for moving, storage, and selling.</span></div>
       </article>
       <article>
         <span class="resume-project-number">02</span>
-        <div><h2>Product Design at abillion</h2><p>Digital product design · UI</p><span>Contributing to digital product work through cross-team collaboration.</span></div>
+        <div><h2>abillion Profile Revamp</h2><p>UX/UI | Research</p><span>Sole UX designer for a launched profile revamp, defining systems, flows, prototypes, and production specifications; validated in UXArmy with four participants across eight tasks.</span></div>
       </article>
       <article>
         <span class="resume-project-number">03</span>
-        <div><h2>Mad John</h2><p>Game UX · Art direction</p><span>Designing a learnable card-and-puzzle game through playtesting and iteration.</span></div>
+        <div><h2>Mad John</h2><p>Game UX | Art direction</p><span>Co-created an in-progress card-and-puzzle game; led game UX and art direction, using six mixed-experience playtests to introduce a hands-on tutorial and refine scoring.</span></div>
       </article>
       <article>
         <span class="resume-project-number">04</span>
-        <div><h2>Regional Website Revamp</h2><p>Sompo Asia · Responsive UI · Information architecture</p><span>Responsive UI, information hierarchy, empty states, and production-ready specifications for a two-month website launch.</span></div>
+        <div><h2>Sompo Asia Website Revamp</h2><p>Responsive UI | Information architecture</p><span>Designed a full regional website across desktop and mobile, translating a refreshed brand and clearer information architecture into flows, prototypes, states, and production specifications.</span></div>
       </article>
       <article>
         <span class="resume-project-number">05</span>
-        <div><h2>Game-jam Puzzle Game</h2><p>Toadally In Love · Game UX · Art direction</p><span>Art direction and UX lead for a four-day project ranked third overall among 73 entries.</span></div>
+        <div><h2>Toadally In Love</h2><p>Game jam | Art direction | UX</p><span>Led art direction and UX for a four-day puzzle-game build, creating a readable interaction system and visual world that ranked third overall among 73 entries.</span></div>
       </article>
     </div>
   `;
