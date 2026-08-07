@@ -23,8 +23,8 @@ document = SimpleDocTemplate(
 
 styles = getSampleStyleSheet()
 styles.add(ParagraphStyle(name="Name", fontName="Helvetica-Bold", fontSize=27, leading=28, textColor=ink, spaceAfter=4))
-styles.add(ParagraphStyle(name="Role", fontName="Helvetica", fontSize=8.2, leading=10.4, textColor=ink, spaceAfter=7))
-styles.add(ParagraphStyle(name="Section", fontName="Helvetica-Bold", fontSize=11.4, leading=13, textColor=ink, spaceBefore=6, spaceAfter=3, uppercase=True))
+styles.add(ParagraphStyle(name="Role", fontName="Helvetica", fontSize=8.2, leading=10.4, textColor=ink, spaceAfter=4))
+styles.add(ParagraphStyle(name="Section", fontName="Helvetica-Bold", fontSize=11.4, leading=13, textColor=ink, spaceBefore=4, spaceAfter=2, uppercase=True))
 styles.add(ParagraphStyle(name="Body", fontName="Helvetica", fontSize=8.1, leading=10.1, textColor=ink, spaceAfter=2))
 styles.add(ParagraphStyle(name="Profile", parent=styles["Body"], alignment=TA_JUSTIFY, spaceAfter=2))
 styles.add(ParagraphStyle(name="Job", fontName="Helvetica-Bold", fontSize=9.3, leading=10.8, textColor=ink, spaceAfter=1))
@@ -46,7 +46,7 @@ def two_column_entry(date, title, organization, description):
         ("LEFTPADDING", (0, 0), (-1, -1), 0),
         ("RIGHTPADDING", (0, 0), (-1, -1), 0),
         ("TOPPADDING", (0, 0), (-1, -1), 0),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
     ]))
     return KeepTogether(table)
 
@@ -63,7 +63,7 @@ story = [
     ),
     Paragraph("PROFILE", styles["Section"]),
     Paragraph(
-        "Digital product designer with four years of UX/UI and product experience across mobile, responsive web, and game UX. I turn complex workflows, information, and interaction systems into clear, practical experiences, with particular care for the moments when people need to understand what is happening and what to do next. My end-to-end practice spans research, information architecture, user flows, prototypes, interface systems, production specifications, and usability testing. I collaborate closely with stakeholders and developers to translate operational needs into dependable customer journeys, and I bring a service-minded, detail-oriented approach to work that affects real people.",
+        "Digital product designer with four years of UX/UI and product experience across mobile, responsive web, and game UX. I turn complex workflows, information, and interaction systems into clear, practical experiences. My end-to-end practice spans research, information architecture, user flows, prototypes, interface systems, production specifications, and usability testing. I collaborate closely with stakeholders and developers to translate operational needs into dependable customer journeys.",
         styles["Profile"],
     ),
     Paragraph("CORE SKILLS", styles["Section"]),
@@ -78,6 +78,7 @@ story = [
 
 experience = [
     ("2026 - Present", "Co-founder", "Oupelaye Studio | Quebec, Canada", "Co-founded a game studio; lead art direction and game UX from concepts through playtesting, partnering with development to iterate gameplay."),
+    ("2025 - Present", "Independent Game Designer & Art Director", "Independent projects | Remote", "Design and playtest small game projects, shaping interaction flows, visual systems, onboarding, and moment-to-moment feedback alongside development collaborators."),
     ("2023 - Present", "Senior Copywriter", "The Immigration People | Singapore", "Write clear, audience-aware immigration content while handling sensitive client information with discretion and accuracy."),
     ("2023 - 2024", "Executive Assistant", "ed&c | Singapore", "Coordinated priorities and operational workflows, keeping day-to-day work organized and stakeholders aligned."),
     ("2020 - 2022", "Digital Product Designer", "abillion | Singapore", "Owned end-to-end UX for a launched profile revamp, delivering systems, flows, prototypes, specifications, and remote usability testing."),
@@ -107,7 +108,7 @@ project_table.setStyle(TableStyle([
     ("LEFTPADDING", (0, 0), (-1, -1), 0),
     ("RIGHTPADDING", (0, 0), (-1, -1), 0),
     ("TOPPADDING", (0, 0), (-1, -1), 1),
-    ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
+    ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
 ]))
 story += [project_table, Paragraph("EDUCATION", styles["Section"])]
 
