@@ -249,3 +249,4 @@ body *,body [class],body [class] *{letter-spacing:0 !important}
 .inventory-image-grid img:only-child{grid-column:1/-1}
 .signal-case .case-metrics{background:#ffffff26;border-color:#ffffff26;box-shadow:0 18px 44px #00000038}.signal-case .case-metrics>div{background:#151222;color:#f4f1ff}.signal-case .case-metrics b{color:#ff72db}.signal-case .case-metrics span{color:#d8d1e2}
 @media(max-width:760px){.toadally-case .case-hero{padding-bottom:58px}.toadally-case .case-hero h1{font-size:clamp(42px,11vw,58px)}.toadally-title-banner{padding:24px}.toadally-title-banner img{aspect-ratio:1.8/1}.sompo-case .case-hero h1,.aurora-case .case-hero h1{font-size:clamp(24px,7.2vw,38px)}.sompo-case .case-visual{aspect-ratio:1.5/1;margin-top:8px}}
+.case-page .case-hero > .case-visual{position:relative;right:auto;bottom:auto;width:auto;height:auto}
