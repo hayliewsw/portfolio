@@ -32,6 +32,8 @@ backButton?.addEventListener('click', () => {
 const nextCaseStudyByPage = {
   'case-study-1.html': 'case-study-2.html',
   'case-study-2.html': 'case-study-3.html',
+  'case-study-3.html': 'case-study-4.html',
+  'case-study-4.html': 'case-study-5.html',
 };
 
 if (document.body.classList.contains('case-page')) {
@@ -108,16 +110,16 @@ if (profileSection) {
     <section class="resume-block skills-block core-skills">
       <span class="eyebrow">Core skills</span>
       <div>
-        <p>Product design<br />UX/UI design<br />Information architecture</p>
-        <p>Workflow design<br />UX research<br />Visual design</p>
-        <p>Cross-team collaboration<br />Art direction<br />Game UX</p>
+        <p>Product design<br />UX/UI design<br />Information architecture<br />Workflow design</p>
+        <p>Design systems & components<br />Wireframes, flows & prototypes<br />Responsive design<br />Production-ready specifications</p>
+        <p>Remote usability testing<br />Cross-functional collaboration<br />Art direction<br />Game UX</p>
       </div>
     </section>
   `);
 }
 
 const selectedProjectsSection = [...document.querySelectorAll('.skills-block')].find((section) => (
-  section.querySelector('.eyebrow')?.textContent.trim() === 'Selected project'
+  section.querySelector('.eyebrow')?.textContent.trim() === 'Selected Projects'
 ));
 
 if (selectedProjectsSection) {
@@ -131,11 +133,19 @@ if (selectedProjectsSection) {
       </article>
       <article>
         <span class="resume-project-number">02</span>
-        <div><h2>Product Design at Abiilion</h2><p>Digital product design · UX/UI</p><span>Contributing to digital product work through cross-team collaboration.</span></div>
+        <div><h2>Product Design at abillion</h2><p>Digital product design · UI</p><span>Contributing to digital product work through cross-team collaboration.</span></div>
       </article>
       <article>
         <span class="resume-project-number">03</span>
-        <div><h2>Oupelaye Studio</h2><p>Game UX · Art direction</p><span>Co-founding a game studio and shaping its art direction and player experience.</span></div>
+        <div><h2>Mad John</h2><p>Game UX · Art direction</p><span>Designing a learnable card-and-puzzle game through playtesting and iteration.</span></div>
+      </article>
+      <article>
+        <span class="resume-project-number">04</span>
+        <div><h2>Regional Website Revamp</h2><p>Sompo Asia · Responsive UI · Information architecture</p><span>Responsive UI, information hierarchy, empty states, and production-ready specifications for a two-month website launch.</span></div>
+      </article>
+      <article>
+        <span class="resume-project-number">05</span>
+        <div><h2>Game-jam Puzzle Game</h2><p>Toadally In Love · Game UX · Art direction</p><span>Art direction and UX lead for a four-day project ranked third overall among 73 entries.</span></div>
       </article>
     </div>
   `;
