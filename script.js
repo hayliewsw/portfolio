@@ -31,9 +31,9 @@ backButton?.addEventListener('click', () => {
 
 const nextCaseStudyByPage = {
   'case-study-1.html': 'case-study-2.html',
-  'case-study-2.html': 'case-study-3.html',
-  'case-study-3.html': 'case-study-4.html',
-  'case-study-4.html': 'case-study-5.html',
+  'case-study-2.html': 'case-study-4.html',
+  'case-study-3.html': 'case-study-5.html',
+  'case-study-4.html': 'case-study-3.html',
 };
 
 if (document.body.classList.contains('case-page')) {
@@ -137,11 +137,11 @@ if (selectedProjectsSection) {
       </article>
       <article>
         <span class="resume-project-number">03</span>
-        <div><h2>Mad John</h2><p>Game UX | Art direction</p><span>Co-created an in-progress card-and-puzzle game; led game UX and art direction, using six mixed-experience playtests to introduce a hands-on tutorial and refine scoring.</span></div>
+        <div><h2>Sompo Asia Website Revamp</h2><p>Responsive UI | Information architecture</p><span>Designed a full regional website across desktop and mobile, translating a refreshed brand and clearer information architecture into flows, states, and production-ready specifications.</span><a class="resume-project-link" href="https://www.sompo-apac.com/" target="_blank" rel="noopener noreferrer">View live website ↗</a></div>
       </article>
       <article>
         <span class="resume-project-number">04</span>
-        <div><h2>Sompo Asia Website Revamp</h2><p>Responsive UI | Information architecture</p><span>Designed a full regional website across desktop and mobile, translating a refreshed brand and clearer information architecture into flows, prototypes, states, and production specifications.</span><a class="resume-project-link" href="https://www.sompo-apac.com/" target="_blank" rel="noopener noreferrer">View live website ↗</a></div>
+        <div><h2>Mad John</h2><p>Game UX | Art direction</p><span>Co-created an in-progress card-and-puzzle game; led game UX and art direction, using six mixed-experience playtests to introduce a hands-on tutorial and refine scoring.</span></div>
       </article>
       <article>
         <span class="resume-project-number">05</span>
