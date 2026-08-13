@@ -1,3 +1,9 @@
+const favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+favicon.rel = 'icon';
+favicon.type = 'image/svg+xml';
+favicon.href = 'favicon.svg';
+document.head.append(favicon);
+
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.main-nav');
 
@@ -34,6 +40,8 @@ const nextCaseStudyByPage = {
   'case-study-2.html': 'case-study-4.html',
   'case-study-3.html': 'case-study-5.html',
   'case-study-4.html': 'case-study-3.html',
+  'case-study-5.html': 'case-study-6.html',
+  'case-study-6.html': 'case-study-1.html',
 };
 
 if (document.body.classList.contains('case-page')) {
