@@ -41,19 +41,16 @@ document.querySelectorAll('.count-up').forEach((number) => {
 
 const hero = document.querySelector('.hero');
 const heroObject = document.querySelector('.hero-object');
-const cybersigilObject = document.querySelector('.cybersigil-object');
 
-if (hero && heroObject && !reducedMotion) {
+if (hero && !reducedMotion) {
   hero.addEventListener('pointermove', (event) => {
     const bounds = hero.getBoundingClientRect();
     const x = (event.clientX - bounds.left) / bounds.width - 0.5;
     const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-    heroObject.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 8}deg) translate3d(${x * 10}px, ${y * 8}px, 0)`;
-    if (cybersigilObject) cybersigilObject.style.translate = `${x * -18}px ${y * -14}px`;
+    if (heroObject) heroObject.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 8}deg) translate3d(${x * 10}px, ${y * 8}px, 0)`;
   });
   hero.addEventListener('pointerleave', () => {
-    heroObject.style.transform = '';
-    if (cybersigilObject) cybersigilObject.style.translate = '';
+    if (heroObject) heroObject.style.transform = '';
   });
 }
 
