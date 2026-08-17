@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Questionnaire & Topline Results — The Trust Edit</title>
+    <style>
+      :root{--ink:#171715;--paper:#f4f1e9;--purple:#4935a6;--lav:#c8baff;--acid:#d7ff48;--line:#17171533}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Arial,sans-serif}header,main,footer{padding-right:5vw;padding-left:5vw}header{padding-top:70px;padding-bottom:55px;border-bottom:1px solid var(--line)}.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--purple)}h1{max-width:900px;margin:18px 0 24px;font:400 clamp(52px,9vw,120px)/.85 Georgia,serif;letter-spacing:-.055em}header>p{max-width:660px;margin:0;font-size:17px}.note{margin:32px 0 0;padding:18px;background:var(--ink);color:var(--paper);font-size:13px}.study-meta{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}.study-meta div{padding:25px 5vw;border-right:1px solid var(--line)}.study-meta div:first-child{padding-left:0}.study-meta div:last-child{border:0}.study-meta span{display:block;margin-bottom:8px;font-size:10px;text-transform:uppercase;color:#57544f}.study-meta b{font-size:14px}.question{display:grid;grid-template-columns:90px 1fr;gap:4vw;padding:70px 0;border-bottom:1px solid var(--line)}.q-number{font:400 34px Georgia,serif;color:var(--purple)}.q-content h2{max-width:850px;margin:0;font:400 clamp(29px,4vw,50px)/1.05 Georgia,serif}.instruction{margin:14px 0 35px;color:#57544f;font-size:12px}.bars{max-width:900px}.bar{margin:20px 0}.bar-head{display:flex;justify-content:space-between;gap:30px;margin-bottom:8px}.bar-head span{font-size:13px}.bar-head b{font-size:13px}.track{height:15px;background:#e2ded3}.fill{height:100%;background:var(--purple);width:var(--value)}.bar:nth-child(2n) .fill{background:#7560d5}.chart-note{margin-top:26px;font-size:11px;color:#57544f}.split{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.callout{padding:28px;background:var(--lav)}.callout span{font-size:11px;text-transform:uppercase}.callout b{display:block;margin:20px 0 8px;font:400 50px Georgia,serif}.callout p{margin:0;font-size:13px}.open-themes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.open-themes article{min-height:230px;padding:24px;background:#fff}.open-themes b{font:400 44px Georgia,serif;color:var(--purple)}.open-themes h3{margin:40px 0 10px;font:400 24px Georgia,serif}.open-themes p{margin:0;color:#57544f;font-size:12px}.screeners{padding:70px 0}.screeners h2{font:400 45px Georgia,serif}.screeners article{padding:22px 0;border-top:1px solid var(--line)}.screeners strong{display:block;margin-bottom:6px}footer{display:flex;justify-content:space-between;padding-top:28px;padding-bottom:40px;background:var(--ink);color:var(--paper);font-size:11px;text-transform:uppercase}footer a{color:var(--acid)}
+      .hero-header{--rx:0deg;--ry:0deg;--px:0px;--py:0px;position:relative;min-height:690px;overflow:hidden;isolation:isolate;background:radial-gradient(circle at 72% 30%,#c8baff55,transparent 30%),var(--paper)}.hero-copy{position:relative;z-index:3}.hero-header h1{max-width:760px}.hero-header>p{position:relative;z-index:3}.hero-header .note{position:relative;z-index:3;max-width:720px}.header-scene{position:absolute;z-index:1;right:-4vw;top:10px;width:min(48vw,650px);height:650px;perspective:1100px;pointer-events:none}.scene-stage{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .16s ease-out}.scene-core{position:absolute;left:34%;top:25%;width:38%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 24%,#fff 0 4%,#d7ff48 12%,#8b72ee 45%,#312080 78%,#171715 100%);box-shadow:inset -25px -30px 55px #17171588,0 45px 80px #4935a655;transform:translateZ(110px)}.scene-ring{position:absolute;left:11%;top:15%;width:76%;height:54%;border:3px solid #4935a6;border-radius:50%;transform-style:preserve-3d}.ring-a{transform:translateZ(45px) rotateX(68deg) rotateZ(calc(18deg + var(--ry)))}.ring-b{border-color:#17171588;transform:translateZ(10px) rotateX(77deg) rotateZ(-35deg);animation:ring-turn 16s linear infinite}.scene-dot{position:absolute;border-radius:50%;box-shadow:0 15px 30px #17171533}.dot-a{right:12%;top:17%;width:70px;height:70px;background:var(--acid);transform:translateZ(180px) translate(var(--px),var(--py))}.dot-b{left:6%;bottom:18%;width:42px;height:42px;background:var(--purple);transform:translateZ(75px) translate(calc(0px - var(--px)),calc(0px - var(--py)))}.scene-card{position:absolute;right:2%;bottom:12%;width:230px;padding:18px;background:#f4f1e9dd;border:1px solid #17171544;box-shadow:18px 22px 45px #17171522;backdrop-filter:blur(10px);transform:translateZ(210px) rotateY(-11deg) rotateX(4deg) translate(var(--px),var(--py))}.scene-card span{font-size:9px;text-transform:uppercase}.scene-card b{display:block;margin:7px 0 13px;font:400 39px Georgia,serif}.mini-bars{display:flex;align-items:end;gap:7px;height:42px}.mini-bars i{display:block;width:14px;background:var(--purple)}.mini-bars i:nth-child(1){height:34%}.mini-bars i:nth-child(2){height:66%}.mini-bars i:nth-child(3){height:48%}.mini-bars i:nth-child(4){height:88%;background:var(--acid);border:1px solid #171715}.scene-shadow{position:absolute;right:7%;bottom:4%;width:70%;height:12%;border-radius:50%;background:#4935a633;filter:blur(24px);transform:rotate(-8deg)}@keyframes ring-turn{to{transform:translateZ(10px) rotateX(77deg) rotateZ(325deg)}}
+      @media(max-width:720px){.study-meta{grid-template-columns:repeat(2,1fr)}.question{grid-template-columns:1fr;padding:55px 0}.split,.open-themes{grid-template-columns:1fr}.study-meta div{padding:20px 5vw}.study-meta div:first-child{padding-left:5vw}.bar-head span{max-width:75%}footer{display:block}footer a{display:block;margin-top:12px}.hero-header{min-height:760px;padding-top:55px}.hero-header h1{font-size:18vw;max-width:90%}.header-scene{right:-35vw;top:235px;width:105vw;height:520px;opacity:.86}.scene-card{right:17%;bottom:10%;width:190px}.hero-header .note{margin-top:300px}.dot-a{width:52px;height:52px}}
+      @media(prefers-reduced-motion:reduce){.scene-stage{transform:none;transition:none}.ring-b{animation:none}}
+    </style>
+  </head>
+  <body>
+    <header class="hero-header">
+      <div class="hero-copy"><span class="label">Synthetic questionnaire + topline results</span>
+      <h1>K-beauty confidence and trial</h1></div>
+      <p>The question wording, fictional response distribution and chart base sizes are shown together so reviewers can trace each reported finding back to its source question.</p>
+      <p class="note"><strong>Demonstration only.</strong> This survey was not fielded. All respondents and results are synthetic and must not inform a business decision.</p>
+      <div class="header-scene" aria-hidden="true"><div class="scene-stage"><div class="scene-shadow"></div><div class="scene-ring ring-a"></div><div class="scene-ring ring-b"></div><div class="scene-core"></div><div class="scene-dot dot-a"></div><div class="scene-dot dot-b"></div><div class="scene-card"><span>Confidence signal</span><b>82%</b><div class="mini-bars"><i></i><i></i><i></i><i></i></div></div></div></div>
+    </header>
+    <main>
+      <section class="study-meta" aria-label="Study details">
+        <div><span>Market</span><b>Singapore</b></div><div><span>Sample</span><b>n=120</b></div><div><span>Audience</span><b>Ages 18–34</b></div><div><span>Concept fieldwork</span><b>5–8 Aug 2026</b></div>
+      </section>
+
+      <section class="question">
+        <div class="q-number">Q1</div>
+        <div class="q-content"><h2>Where have you encountered Korean skincare products in the past three months?</h2><p class="instruction">Select all that apply · Base: all synthetic respondents (n=120)</p><div class="bars">
+          <div class="bar"><div class="bar-head"><span>Instagram</span><b>58%</b></div><div class="track"><div class="fill" style="--value:58%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>TikTok</span><b>46%</b></div><div class="track"><div class="fill" style="--value:46%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>Friends or family</span><b>39%</b></div><div class="track"><div class="fill" style="--value:39%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>Retail store</span><b>34%</b></div><div class="track"><div class="fill" style="--value:34%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>YouTube</span><b>27%</b></div><div class="track"><div class="fill" style="--value:27%"></div></div></div>
+        </div><p class="chart-note">Multiple-response question; percentages do not sum to 100%.</p></div>
+      </section>
+
+      <section class="question">
+        <div class="q-number">Q2</div>
+        <div class="q-content"><h2>Where did you most recently discover an unfamiliar Korean skincare product?</h2><p class="instruction">Select one · Base: all synthetic respondents (n=120)</p><div class="bars">
+          <div class="bar"><div class="bar-head"><span>Social content</span><b>64% · 77</b></div><div class="track"><div class="fill" style="--value:64%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>Friend or family recommendation</span><b>16% · 19</b></div><div class="track"><div class="fill" style="--value:16%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>Retail store</span><b>12% · 14</b></div><div class="track"><div class="fill" style="--value:12%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>Marketplace or search</span><b>8% · 10</b></div><div class="track"><div class="fill" style="--value:8%"></div></div></div>
+        </div><p class="chart-note">Percentages rounded; counts sum to n=120.</p></div>
+      </section>
+
+      <section class="question">
+        <div class="q-number">Q3</div>
+        <div class="q-content"><h2>Which would make you more confident trying an unfamiliar Korean skincare product?</h2><p class="instruction">Select all that apply · Base: all synthetic respondents (n=120)</p><div class="bars">
+          <div class="bar"><div class="bar-head"><span>Visible results from real users</span><b>82% · 98</b></div><div class="track"><div class="fill" style="--value:82%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>Detailed reviews from trusted creators</span><b>74% · 89</b></div><div class="track"><div class="fill" style="--value:74%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>Clear ingredient and benefit explanation</span><b>68% · 82</b></div><div class="track"><div class="fill" style="--value:68%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>Believable fit between talent and product</span><b>61% · 73</b></div><div class="track"><div class="fill" style="--value:61%"></div></div></div>
+          <div class="bar"><div class="bar-head"><span>Evidence the product is used in Korea</span><b>43% · 52</b></div><div class="track"><div class="fill" style="--value:43%"></div></div></div>
+        </div><p class="chart-note">Multiple-response question; percentages do not sum to 100%.</p></div>
+      </section>
+
+      <section class="question">
+        <div class="q-number">Q4</div>
+        <div class="q-content"><h2>How would a believable fit between a celebrity and the product affect your trust?</h2><p class="instruction">Select one · Base: all synthetic respondents (n=120)</p><div class="split"><div class="callout"><span>Increase trust</span><b>61%</b><p>73 fictional respondents</p></div><div class="callout"><span>No increase / unsure</span><b>39%</b><p>47 fictional respondents</p></div></div></div>
+      </section>
+
+      <section class="question">
+        <div class="q-number">Q5</div>
+        <div class="q-content"><h2>What would make a Korean skincare campaign feel credible or not credible?</h2><p class="instruction">Open response · AI-assisted thematic coding, manually reviewed · Base: all synthetic respondents (n=120)</p><div class="open-themes"><article><b>46</b><h3>Specific product evidence</h3><p>Requests for demonstrations, routine fit and visible performance.</p></article><article><b>38</b><h3>Relatable reviewer</h3><p>Preference for people with similar skin concerns or environments.</p></article><article><b>31</b><h3>Talent credibility</h3><p>Comments on whether the spokesperson’s connection feels believable.</p></article></div><p class="chart-note">Responses could receive more than one code; counts are mentions, not mutually exclusive respondents.</p></div>
+      </section>
+
+      <section class="screeners"><span class="label">Screening and profile questions</span><h2>Questions without topline charts</h2><article><strong>S1. Recent category purchase</strong>Have you purchased any facial skincare product in the past six months? [Yes / No — terminate]</article><article><strong>S2. K-beauty awareness</strong>Before today, had you heard of Korean skincare or K-beauty? [Yes / No — terminate]</article><article><strong>D1–D3. Profile</strong>Age band, skin concerns and typical skincare purchase channel. Prefer not to answer available where appropriate.</article></section>
+    </main>
+    <footer><span>The Trust Edit · Synthetic research demonstration</span><a href="../../k-beauty-insights.html#findings">Return to findings ↗</a></footer>
+    <script>
+      const hero = document.querySelector('.hero-header');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (hero && !reduceMotion) {
+        hero.addEventListener('pointermove', (event) => {
+          const rect = hero.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+          const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+          hero.style.setProperty('--rx', `${y * -7}deg`);
+          hero.style.setProperty('--ry', `${x * 9}deg`);
+          hero.style.setProperty('--px', `${x * 14}px`);
+          hero.style.setProperty('--py', `${y * 14}px`);
+        });
+        hero.addEventListener('pointerleave', () => {
+          hero.style.setProperty('--rx', '0deg');
+          hero.style.setProperty('--ry', '0deg');
+          hero.style.setProperty('--px', '0px');
+          hero.style.setProperty('--py', '0px');
+        });
+      }
+    </script>
+  </body>
+</html>

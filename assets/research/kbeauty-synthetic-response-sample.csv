@@ -1,0 +1,14 @@
+respondent_id,age_group,discovery_channel,confidence_signals,celebrity_fit,open_response
+S006,18-24,TikTok,"Creator reviews;Visible results",Increases trust,"I want to see how it sits under sunscreen and makeup."
+S014,18-24,Instagram,"Creator reviews;Ingredient explanation",No difference,"The ingredient names get my attention but I need someone to explain the benefit."
+S021,18-24,Friend recommendation,"Visible results;Used in Korea",Increases trust,"I save viral products but normally wait for reviews before ordering."
+S033,18-24,YouTube,"Creator reviews;Visible results",Increases trust,"Longer reviews feel more useful than a polished launch video."
+S047,18-24,TikTok,"Visible results;Talent-product fit",Increases trust,"The celebrity should actually make sense for skincare."
+S058,18-24,Retail store,"Ingredient explanation;Visible results",No difference,"I want to test the texture before adding another step to my routine."
+S064,25-34,Instagram,"Ingredient explanation;Creator reviews",No difference,"Tell me what the active does and whether it suits sensitive skin."
+S072,25-34,Friend recommendation,"Visible results;Ingredient explanation",Increases trust,"I trust recommendations from people with similar skin concerns."
+S083,25-34,Retail store,"Visible results;Creator reviews",No difference,"Humidity matters because rich products can feel uncomfortable here."
+S096,25-34,YouTube,"Ingredient explanation;Used in Korea",Decreases trust,"A celebrity-only campaign makes me wonder whether the product has substance."
+S107,25-34,Instagram,"Visible results;Talent-product fit",Increases trust,"The partnership works when the person's image matches the benefit."
+S118,25-34,Online marketplace,"Visible results;Creator reviews",No difference,"I check official-store reviews and compare the price before buying."
+
