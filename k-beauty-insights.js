@@ -41,6 +41,7 @@ document.querySelectorAll('.count-up').forEach((number) => {
 
 const hero = document.querySelector('.hero');
 const heroObject = document.querySelector('.hero-object');
+const cybersigilObject = document.querySelector('.cybersigil-object');
 
 if (hero && heroObject && !reducedMotion) {
   hero.addEventListener('pointermove', (event) => {
@@ -48,10 +49,72 @@ if (hero && heroObject && !reducedMotion) {
     const x = (event.clientX - bounds.left) / bounds.width - 0.5;
     const y = (event.clientY - bounds.top) / bounds.height - 0.5;
     heroObject.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 8}deg) translate3d(${x * 10}px, ${y * 8}px, 0)`;
+    if (cybersigilObject) cybersigilObject.style.translate = `${x * -18}px ${y * -14}px`;
   });
   hero.addEventListener('pointerleave', () => {
     heroObject.style.transform = '';
+    if (cybersigilObject) cybersigilObject.style.translate = '';
   });
+}
+
+const shaderCanvas = document.querySelector('.hero-shader');
+if (shaderCanvas) {
+  const gl = shaderCanvas.getContext('webgl', { alpha: true, antialias: false });
+  if (gl) {
+    const vertexSource = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+    const fragmentSource = `
+      precision mediump float;
+      uniform vec2 r;
+      uniform float t;
+      void main(){
+        vec2 uv=(gl_FragCoord.xy-.5*r.xy)/min(r.x,r.y);
+        float a=atan(uv.y,uv.x);
+        float d=length(uv);
+        float wave=sin(d*13.0-t*0.75+a*2.0)*0.5+0.5;
+        float ribbons=sin((uv.x+sin(uv.y*4.0+t*.28)*.18)*8.0-t*.45)*.5+.5;
+        float field=smoothstep(.12,.92,wave*.55+ribbons*.45);
+        vec3 pearl=vec3(.969,.961,1.0);
+        vec3 lavender=vec3(.788,.725,.937);
+        vec3 navy=vec3(.082,.094,.247);
+        vec3 color=mix(pearl,lavender,field*.68);
+        color=mix(color,navy,smoothstep(.68,1.28,d)*.22);
+        gl_FragColor=vec4(color,1.0);
+      }`;
+    const compile = (type, source) => {
+      const shader = gl.createShader(type);
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      return shader;
+    };
+    const program = gl.createProgram();
+    gl.attachShader(program, compile(gl.VERTEX_SHADER, vertexSource));
+    gl.attachShader(program, compile(gl.FRAGMENT_SHADER, fragmentSource));
+    gl.linkProgram(program);
+    gl.useProgram(program);
+    const vertices = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertices);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]), gl.STATIC_DRAW);
+    const position = gl.getAttribLocation(program, 'p');
+    gl.enableVertexAttribArray(position);
+    gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+    const resolution = gl.getUniformLocation(program, 'r');
+    const time = gl.getUniformLocation(program, 't');
+    const renderShader = (now = 0) => {
+      const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+      const width = Math.max(1, Math.round(shaderCanvas.clientWidth * ratio));
+      const height = Math.max(1, Math.round(shaderCanvas.clientHeight * ratio));
+      if (shaderCanvas.width !== width || shaderCanvas.height !== height) {
+        shaderCanvas.width = width;
+        shaderCanvas.height = height;
+        gl.viewport(0, 0, width, height);
+      }
+      gl.uniform2f(resolution, width, height);
+      gl.uniform1f(time, now * .001);
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
+      if (!reducedMotion) requestAnimationFrame(renderShader);
+    };
+    renderShader();
+  }
 }
 
 const supportsFinePointer = window.matchMedia('(any-pointer: fine)').matches;
