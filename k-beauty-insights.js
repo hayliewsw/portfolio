@@ -116,6 +116,62 @@ if (shaderCanvas) {
 
 const supportsFinePointer = window.matchMedia('(any-pointer: fine)').matches;
 
+const reactiveBubbles = hero ? [...hero.querySelectorAll('.hero-stat-wrap .object-stat, .hero-data-rail article')] : [];
+
+if (hero && supportsFinePointer && !reducedMotion && reactiveBubbles.length) {
+  const bubbleStates = reactiveBubbles.map((element, index) => ({
+    element,
+    depth: index === 0 ? 18 : 10 + index * 4,
+    x: 0,
+    y: 0,
+    rotation: 0,
+    targetX: 0,
+    targetY: 0,
+    targetRotation: 0
+  }));
+  let bubbleFrame;
+
+  const renderBubbleMotion = () => {
+    let moving = false;
+    bubbleStates.forEach((state, index) => {
+      state.x += (state.targetX - state.x) * 0.12;
+      state.y += (state.targetY - state.y) * 0.12;
+      state.rotation += (state.targetRotation - state.rotation) * 0.12;
+      state.element.style.setProperty('--motion-x', `${state.x.toFixed(2)}px`);
+      state.element.style.setProperty('--motion-y', `${state.y.toFixed(2)}px`);
+      state.element.style.setProperty('--motion-r', `${state.rotation.toFixed(2)}deg`);
+      moving ||= Math.abs(state.targetX - state.x) > 0.05 || Math.abs(state.targetY - state.y) > 0.05 || Math.abs(state.targetRotation - state.rotation) > 0.03;
+    });
+    bubbleFrame = moving ? requestAnimationFrame(renderBubbleMotion) : undefined;
+  };
+
+  const startBubbleMotion = () => {
+    if (!bubbleFrame) bubbleFrame = requestAnimationFrame(renderBubbleMotion);
+  };
+
+  hero.addEventListener('pointermove', (event) => {
+    const bounds = hero.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
+    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+    bubbleStates.forEach((state, index) => {
+      const direction = index % 2 ? -1 : 1;
+      state.targetX = x * state.depth * direction;
+      state.targetY = y * state.depth * 0.65;
+      state.targetRotation = x * direction * (index === 0 ? 2.2 : 3.4);
+    });
+    startBubbleMotion();
+  }, { passive: true });
+
+  hero.addEventListener('pointerleave', () => {
+    bubbleStates.forEach((state) => {
+      state.targetX = 0;
+      state.targetY = 0;
+      state.targetRotation = 0;
+    });
+    startBubbleMotion();
+  });
+}
+
 if (supportsFinePointer && !reducedMotion) {
   const siteCursor = document.createElement('div');
   siteCursor.className = 'site-cursor';

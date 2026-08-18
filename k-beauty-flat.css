@@ -756,3 +756,140 @@ html,body{background-color:var(--c-lavender)!important}
 .contact-edc-actions a:first-child{font-weight:400!important}
 .contact-edc-actions a:last-child{font-weight:600!important}
 .contact-edc-actions a:hover{transform:translateY(-2px)}
+
+/* Final hero composition balance */
+.hero-stat-wrap{top:32%!important}
+.hero-stat-wrap .object-stat{width:250px;height:250px}
+@media(max-width:760px){
+  .hero-stat-wrap{top:29%!important}
+  .hero-stat-wrap .object-stat{width:174px;height:174px}
+  .cybersigil-object{--sigil-opacity:.58;top:52%;right:-20%;width:58vw;height:24%}
+}
+@media(max-width:380px){
+  .hero-stat-wrap{top:30%!important}
+  .hero-stat-wrap .object-stat{width:156px;height:156px}
+}
+
+/* Supporting-stat bubble cluster */
+.hero-data-rail{
+  position:absolute;
+  z-index:3;
+  left:4.5%;
+  top:34%;
+  width:380px;
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+.hero-data-rail article{
+  --tilt:0deg;
+  flex:0 0 116px;
+  width:116px;
+  height:116px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:15px;
+  color:var(--c-ink);
+  background-color:rgba(247,245,255,.92);
+  border:1px solid rgba(21,24,63,.5);
+  border-radius:50%;
+  box-shadow:inset 8px 9px 14px rgba(247,245,255,.9),inset -10px -12px 18px rgba(201,185,239,.5),0 8px 0 rgba(21,24,63,.08);
+  text-align:center;
+  opacity:0;
+  animation:dataRailIn .65s cubic-bezier(.2,.8,.2,1) both
+}
+.hero-data-rail article:nth-child(1){--tilt:-4deg;animation-delay:.65s}
+.hero-data-rail article:nth-child(2){--tilt:3deg;translate:0 -13px;animation-delay:.78s}
+.hero-data-rail article:nth-child(3){--tilt:-2deg;animation-delay:.91s}
+.hero-data-rail b{font:600 28px/1 "DM Sans",sans-serif}
+.hero-data-rail span{max-width:88px;font:500 7px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.04em}
+@keyframes dataRailIn{
+  from{opacity:0;transform:translateX(-20px) scale(.82) rotate(var(--tilt))}
+  to{opacity:1;transform:scale(1) rotate(var(--tilt))}
+}
+@media(max-width:900px){.hero-data-rail{display:none}}
+@media(prefers-reduced-motion:reduce){.hero-data-rail article{opacity:1;animation:none}}
+
+/* Match supporting bubbles to the primary 96% bubble */
+.hero-data-rail article{
+  position:relative;
+  overflow:hidden;
+  color:var(--c-ink)!important;
+  background-color:var(--c-lavender)!important;
+  border:2px solid var(--c-pearl)!important;
+  box-shadow:inset 15px 14px 25px rgba(247,245,255,.82),inset -18px -22px 30px rgba(21,24,63,.2),0 0 0 2px rgba(247,245,255,.6),0 0 24px rgba(201,185,239,.46),0 20px 34px rgba(21,24,63,.16)
+}
+.hero-data-rail article::before{
+  content:"";
+  position:absolute;
+  left:16%;
+  top:9%;
+  width:52%;
+  height:21%;
+  border-radius:50%;
+  background-color:rgba(247,245,255,.76);
+  transform:rotate(-18deg)
+}
+.hero-data-rail b,.hero-data-rail span{position:relative;z-index:1}
+
+/* Comfortable text spacing inside every hero bubble */
+.hero-data-rail{width:410px;gap:10px}
+.hero-data-rail article{
+  flex-basis:124px;
+  width:124px;
+  height:124px;
+  box-sizing:border-box;
+  padding:21px 19px
+}
+.hero-data-rail b{font-size:27px}
+.hero-data-rail span{max-width:82px;line-height:1.4}
+.hero-stat-wrap .object-stat{box-sizing:border-box;padding:38px}
+.hero-stat-wrap .object-stat small{max-width:150px;line-height:1.4}
+@media(max-width:760px){
+  .hero-stat-wrap .object-stat{padding:27px}
+  .hero-stat-wrap .object-stat small{max-width:104px}
+}
+@media(max-width:380px){.hero-stat-wrap .object-stat{padding:24px}}
+
+/* Stack supporting bubbles beneath the primary statistic */
+.hero-stat-wrap{top:24%!important}
+.hero-data-rail{
+  left:50%;
+  top:39%;
+  transform:translateX(-50%)
+}
+@media(max-width:900px){
+  .hero-stat-wrap{top:29%!important}
+}
+
+/* Larger supporting statistic bubbles */
+@media(min-width:901px){
+  .hero-stat-wrap{top:17%!important}
+  .hero-data-rail{top:32%;width:570px;gap:15px}
+  .hero-data-rail article{flex-basis:180px;width:180px;height:180px;padding:30px 27px}
+  .hero-data-rail b{font-size:38px}
+  .hero-data-rail span{max-width:116px;font-size:9px;line-height:1.42}
+}
+
+/* Cursor-reactive bubble motion */
+.hero-stat-wrap .object-stat{
+  translate:var(--motion-x,0px) var(--motion-y,0px);
+  rotate:var(--motion-r,0deg);
+  will-change:translate,rotate
+}
+.hero-data-rail article{
+  --base-x:0px;
+  --base-y:0px;
+  translate:calc(var(--base-x) + var(--motion-x,0px)) calc(var(--base-y) + var(--motion-y,0px));
+  rotate:var(--motion-r,0deg);
+  will-change:translate,rotate
+}
+.hero-data-rail article:nth-child(1){--base-x:-14px;--base-y:7px}
+.hero-data-rail article:nth-child(2){--base-x:0px;--base-y:22px}
+.hero-data-rail article:nth-child(3){--base-x:16px;--base-y:-6px}
+@media(prefers-reduced-motion:reduce){
+  .hero-stat-wrap .object-stat,.hero-data-rail article{--motion-x:0px;--motion-y:0px;--motion-r:0deg}
+}
